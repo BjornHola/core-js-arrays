@@ -152,10 +152,20 @@ console.log(getStringsLength(['angular', 'react', 'ember']));
  *   getAverage([ 1, 10, 100, 1000 ])  => 277,75
  *   getAverage([ 2, 3, 3 ])  => 2,67
  */
-function getAverage(/* arr */) {
-  throw new Error('Not implemented');
+function getAverage(arr) {
+  if (arr.length === 0) return 0;
+  const newArr = arr.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
+  const average = newArr / arr.length;
+  return parseFloat(average.toFixed(2));
 }
-
+console.log(getAverage([]));
+console.log(getAverage([1, 2, 3]));
+console.log(getAverage([-1, 1, -1, 1]));
+console.log(getAverage([1, 10, 100, 1000]));
+console.log(getAverage([2, 3, 3]));
 /**
  * Checks if all strings in an array have the same length.
  *
