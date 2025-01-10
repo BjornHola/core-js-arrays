@@ -106,9 +106,21 @@ console.log(findAllOccurrences([true, 0, 1, 'true'], true));
  *    removeFalsyValues([ 1, 2, 3, 4, 5, 'false' ]) => [ 1, 2, 3, 4, 5, 'false' ]
  *    removeFalsyValues([ false, 0, NaN, '', undefined ]) => [ ]
  */
-function removeFalsyValues(/* arr */) {
-  throw new Error('Not implemented');
+function removeFalsyValues(arr) {
+  const newArr = arr.filter(
+    (item) =>
+      item !== 0 &&
+      item !== false &&
+      Number.isNaN(item) !== true &&
+      item !== null &&
+      item !== '' &&
+      item !== undefined
+  );
+  return newArr;
 }
+console.log(removeFalsyValues([0, false, 'cat', NaN, true, '']));
+console.log(removeFalsyValues([1, 2, 3, 4, 5, 'false']));
+console.log(removeFalsyValues([false, 0, NaN, '', undefined]));
 
 /**
  * Returns an array containing the lengths of each string in a specified array of strings.
