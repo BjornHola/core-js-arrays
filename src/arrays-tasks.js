@@ -20,10 +20,13 @@
  *    getIntervalArray(0, 100) => [ 0, 1, 2, ..., 100 ]
  *    getIntervalArray(3, 3) => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  return Array.from({ length: end - start + 1 }).map((_, i) => start + i);
 }
-
+console.log(getIntervalArray(1, 5));
+console.log(getIntervalArray(-2, 2));
+console.log(getIntervalArray(0, 100));
+console.log(getIntervalArray(3, 3));
 /**
  * Returns a new array where each element is the sum of the corresponding elements
  * from two arrays. Arrays can have different lengths.
@@ -37,10 +40,16 @@ function getIntervalArray(/* start, end */) {
  *    sumArrays([10, 20, 30], [5, 10, 15]) => [15, 30, 45]
  *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
  */
-function sumArrays(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function sumArrays(arr1, arr2) {
+  const maxLength = Math.max(arr1.length, arr2.length);
+  return Array.from(
+    { length: maxLength },
+    (_, i) => (arr1[i] || 0) + (arr2[i] || 0)
+  );
 }
-
+console.log(sumArrays([1, 2, 3], [4, 5, 6])); // [5, 7, 9]
+console.log(sumArrays([10, 20, 30], [5, 10, 15])); // [15, 30, 45]
+console.log(sumArrays([-1, 0, 1], [1, 2, 3, 4])); // [0, 2, 4, 4]
 /**
  * Returns an index of the specified element in array or -1 if element is not found.
  *
