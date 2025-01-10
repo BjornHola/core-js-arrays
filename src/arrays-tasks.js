@@ -62,10 +62,15 @@ console.log(sumArrays([-1, 0, 1], [1, 2, 3, 4])); // [0, 2, 4, 4]
  *    findElement(['Array', 'Number', 'string'], 'Date') => -1
  *    findElement([0, 1, 2, 3, 4, 5], 5) => 5
  */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
+function findElement(arr, value) {
+  if (value === undefined) {
+    return -1;
+  }
+  return arr.indexOf(value);
 }
-
+console.log(findElement(['Ace', 10, true], 10));
+console.log(findElement(['Array', 'Number', 'string'], 'Date'));
+console.log(findElement([0, 1, 2, 3, 4, 5], 5));
 /**
  * Returns a number of all occurrences of the specified item in an array.
  *
