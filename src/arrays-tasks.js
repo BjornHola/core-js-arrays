@@ -396,10 +396,27 @@ console.log(selectMany(['one', 'two', 'three'], (x) => x.split('')));
  *   calculateBalance([ [ 10, 8 ], [ 1, 5 ] ])  => (10 - 8) + (1 - 5) = 2 + -4 = -2
  *   calculateBalance([]) => 0
  */
-function calculateBalance(/* arr */) {
-  throw new Error('Not implemented');
+function calculateBalance(arr) {
+  if (arr.length === 0) return 0;
+  const newArr = arr.flat();
+  const result = newArr.reduce((acc, curr, index) => {
+    return index % 2 === 0 ? acc + curr : acc - curr;
+  }, 0);
+  return result;
 }
-
+console.log(
+  calculateBalance([
+    [10, 8],
+    [5, 1],
+  ])
+);
+console.log(
+  calculateBalance([
+    [10, 8],
+    [1, 5],
+  ])
+);
+console.log(calculateBalance([]));
 /**
  * Breaks an array into chunks of the specified size.
  *
