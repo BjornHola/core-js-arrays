@@ -194,10 +194,13 @@ console.log(isSameLength(['cat', 'dog', 'elephant']));
  *    isValueEqualsIndex([2, 1, 0, 4, 5]) => true
  *    isValueEqualsIndex([10, 20, 30, 40, 50]) => false
  */
-function isValueEqualsIndex(/* arr */) {
-  throw new Error('Not implemented');
+function isValueEqualsIndex(arr) {
+  const result = arr.some((value, index) => value === index);
+  return result;
 }
-
+console.log(isValueEqualsIndex([0, 1, 2, 3, 4]));
+console.log(isValueEqualsIndex([2, 1, 0, 4, 5]));
+console.log(isValueEqualsIndex([10, 20, 30, 40, 50]));
 /**
  * Inserts the item into specified array at specified index.
  *
