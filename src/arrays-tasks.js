@@ -369,10 +369,20 @@ console.log(flattenArray([1, 2, 3, 4]));
  *   selectMany([[1, 2], [3, 4], [5, 6]], (x) => x) =>   [ 1, 2, 3, 4, 5, 6 ]
  *   selectMany(['one','two','three'], (x) => x.split('')) =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
-function selectMany(/* arr, childrenSelector */) {
-  throw new Error('Not implemented');
+function selectMany(arr, childrenSelector) {
+  return arr.flatMap(childrenSelector);
 }
-
+console.log(
+  selectMany(
+    [
+      [1, 2],
+      [3, 4],
+      [5, 6],
+    ],
+    (x) => x
+  )
+);
+console.log(selectMany(['one', 'two', 'three'], (x) => x.split('')));
 /**
  * Every month, you record your income and expenses.
  * Expenses may be greater than income.
