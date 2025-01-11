@@ -324,10 +324,20 @@ console.log(distinct([]));
  *    createNDimensionalArray(4, 2) => [[[[0, 0], [0, 0]], [[0, 0], [0, 0]]], [[[0, 0], [0, 0]], [[0, 0], [0, 0]]]]
  *    createNDimensionalArray(1, 1) => [0]
  */
-function createNDimensionalArray(/* n, size */) {
-  throw new Error('Not implemented');
+function createNDimensionalArray(n, size) {
+  if (n <= 0 || size <= 0) return [];
+  function createArray(level) {
+    if (level === 0) return 0;
+    return Array(size)
+      .fill()
+      .map(() => createArray(level - 1));
+  }
+  return createArray(n);
 }
-
+console.log(createNDimensionalArray(2, 3));
+console.log(createNDimensionalArray(3, 2));
+console.log(createNDimensionalArray(4, 2));
+console.log(createNDimensionalArray(1, 1));
 /**
  * Flattens a nested array into a single-level array.
  *
@@ -339,10 +349,13 @@ function createNDimensionalArray(/* n, size */) {
  *    flattenArray(['a', ['b', ['c', 'd'], 'e'], 'f']) => ['a', 'b', 'c', 'd', 'e', 'f']
  *    flattenArray([1, 2, 3, 4]) => [1, 2, 3, 4]
  */
-function flattenArray(/* nestedArray */) {
-  throw new Error('Not implemented');
+function flattenArray(nestedArray) {
+  const result = nestedArray.flat(3);
+  return result;
 }
-
+console.log(flattenArray([1, [2, [3, 4], 5], 6]));
+console.log(flattenArray(['a', ['b', ['c', 'd'], 'e'], 'f']));
+console.log(flattenArray([1, 2, 3, 4]));
 /**
  * Projects each element of the specified array to a sequence
  * and flattens the resulting sequences into one array.
