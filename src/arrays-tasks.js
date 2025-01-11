@@ -303,10 +303,14 @@ console.log(toStringList(['rock', 'paper', 'scissors']));
  *   distinct([ 1, 1, 2, 2, 3, 3, 4, 4]) => [ 1, 2, 3, 4]
  *   distinct([]) => []
  */
-function distinct(/* arr */) {
-  throw new Error('Not implemented');
+function distinct(arr) {
+  const result = new Set(arr);
+  return Array.from(result);
 }
-
+console.log(distinct([1, 2, 3, 3, 2, 1]));
+console.log(distinct(['a', 'a', 'a', 'a']));
+console.log(distinct([1, 1, 2, 2, 3, 3, 4, 4]));
+console.log(distinct([]));
 /**
  * Creates an n-dimensional array and fills it with zeros.
  *
