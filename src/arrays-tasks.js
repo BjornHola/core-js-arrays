@@ -429,10 +429,20 @@ console.log(calculateBalance([]));
  *    createChunks(['a', 'b', 'c', 'd', 'e'], 2) => [['a', 'b'], ['c', 'd'], ['e']]
  *    createChunks([10, 20, 30, 40, 50], 1) => [[10], [20], [30], [40], [50]]
  */
-function createChunks(/* arr, chunkSize */) {
-  throw new Error('Not implemented');
+function createChunks(arr, chunkSize) {
+  return arr.reduce((result, item, index) => {
+    const chunkIndex = Math.floor(index / chunkSize);
+    const newResult = [...result];
+    if (!newResult[chunkIndex]) {
+      newResult[chunkIndex] = [];
+    }
+    newResult[chunkIndex].push(item);
+    return newResult;
+  }, []);
 }
-
+console.log(createChunks([1, 2, 3, 4, 5, 6, 7], 3));
+console.log(createChunks(['a', 'b', 'c', 'd', 'e'], 2));
+console.log(createChunks([10, 20, 30, 40, 50], 1));
 /**
  * Generates an array of odd numbers of the specified length.
  *
