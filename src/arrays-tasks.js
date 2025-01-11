@@ -176,10 +176,13 @@ console.log(getAverage([2, 3, 3]));
  *    isSameLength(['orange', 'banana', 'cherry']) => true
  *    isSameLength(['cat', 'dog', 'elephant']) => false
  */
-function isSameLength(/* arr */) {
-  throw new Error('Not implemented');
+function isSameLength(arr) {
+  if (arr.length < 2) return true;
+  const { length } = arr[0];
+  return arr.every(({ length: len }) => len === length);
 }
-
+console.log(isSameLength(['orange', 'banana', 'cherry']));
+console.log(isSameLength(['cat', 'dog', 'elephant']));
 /**
  * Checks if there are elements in the array where the value is equal to its index.
  *
