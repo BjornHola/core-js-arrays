@@ -577,10 +577,14 @@ console.log(getIndicesOfOddNumbers([11, 22, 33, 44, 55]));
  *    getHexRGBValues([ 0, 255, 16777215]) => [ '#000000', '#0000FF', '#FFFFFF' ]
  *    getHexRGBValues([]) => []
  */
-function getHexRGBValues(/* arr */) {
-  throw new Error('Not implemented');
+function getHexRGBValues(arr) {
+  return arr.map((num) => {
+    const hex = num.toString(16).padStart(6, '0').toUpperCase();
+    return `#${hex}`;
+  });
 }
-
+console.log(getHexRGBValues([0, 255, 16777215]));
+console.log(getHexRGBValues([]));
 /**
  * Returns the n largest values from the specified array
  *
