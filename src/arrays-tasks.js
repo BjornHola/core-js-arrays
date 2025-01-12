@@ -503,10 +503,25 @@ console.log(getElementByIndices([[[1, 2, 3]]], [0, 0, 1]));
  *  getFalsyValuesCount([ -1, 'false', null, 0 ]) => 2
  *  getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]) => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  return arr.reduce((acc, curr) => {
+    if (
+      curr === false ||
+      curr === null ||
+      curr === 0 ||
+      curr === undefined ||
+      curr === '' ||
+      Number.isNaN(curr)
+    ) {
+      acc.push(curr);
+    }
+    return acc;
+  }, []).length;
 }
-
+console.log(getFalsyValuesCount([]));
+console.log(getFalsyValuesCount([1, '', 3]));
+console.log(getFalsyValuesCount([-1, 'false', null, 0]));
+console.log(getFalsyValuesCount([null, undefined, NaN, false, 0, '']));
 /**
  * Creates an identity matrix of the specified size.
  *
