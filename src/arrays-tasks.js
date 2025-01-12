@@ -540,10 +540,14 @@ console.log(getFalsyValuesCount([null, undefined, NaN, false, 0, '']));
  *                              [0,0,0,1,0],
  *                              [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  return Array.from({ length: n }, (_, i) =>
+    Array.from({ length: n }, (__, j) => (i === j ? 1 : 0))
+  );
 }
-
+console.log(getIdentityMatrix(1));
+console.log(getIdentityMatrix(2));
+console.log(getIdentityMatrix(5));
 /**
  * Returns an array containing indices of odd elements in the input array.
  *
