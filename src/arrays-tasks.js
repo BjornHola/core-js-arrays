@@ -672,10 +672,15 @@ console.log(findLongestIncreasingSubsequence([50, 3, 10, 7, 40, 80]));
  *  propagateItemsByPositionIndex([ 'a', 'b', 'c', null ]) => [ 'a', 'b', 'b', 'c', 'c', 'c',  null, null, null, null ]
  *  propagateItemsByPositionIndex([ 1,2,3,4,5 ]) => [ 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5 ]
  */
-function propagateItemsByPositionIndex(/* arr */) {
-  throw new Error('Not implemented');
+function propagateItemsByPositionIndex(arr) {
+  if (arr.length === 0) return [];
+  return arr.flatMap((item, index) => Array(index + 1).fill(item));
 }
-
+console.log(propagateItemsByPositionIndex([]));
+console.log(propagateItemsByPositionIndex([1]));
+console.log(propagateItemsByPositionIndex(['a', 'b']));
+console.log(propagateItemsByPositionIndex(['a', 'b', 'c', null]));
+console.log(propagateItemsByPositionIndex([1, 2, 3, 4, 5]));
 /**
  * Shifts an array by n positions. If n is negative, the array is shifted to the left;
  * if positive, it is shifted to the right.
@@ -689,10 +694,14 @@ function propagateItemsByPositionIndex(/* arr */) {
  *    shiftArray(['a', 'b', 'c', 'd'], -1) => ['b', 'c', 'd', 'a']
  *    shiftArray([10, 20, 30, 40, 50], -3) => [40, 50, 10, 20, 30]
  */
-function shiftArray(/* arr, n */) {
-  throw new Error('Not implemented');
+function shiftArray(arr, n) {
+  const len = arr.length;
+  const t = ((n % len) + len) % len;
+  return arr.slice(-t).concat(arr.slice(0, -t));
 }
-
+console.log(shiftArray([1, 2, 3, 4, 5], 2));
+console.log(shiftArray(['a', 'b', 'c', 'd'], -1));
+console.log(shiftArray([10, 20, 30, 40, 50], -3));
 /**
  * Sorts digit names.
  *
