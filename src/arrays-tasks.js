@@ -619,10 +619,12 @@ console.log(getMaxItems([10, 10, 10, 10], 3));
  *    findCommonElements(['a', 'b', 'c'], ['b', 'c', 'd']) => [ 'b', 'c' ]
  *    findCommonElements([1, 2, 3], ['a', 'b', 'c']) => []
  */
-function findCommonElements(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function findCommonElements(arr1, arr2) {
+  return arr1.filter((item) => arr2.includes(item));
 }
-
+console.log(findCommonElements([1, 2, 3], [2, 3, 4]));
+console.log(findCommonElements(['a', 'b', 'c'], ['b', 'c', 'd']));
+console.log(findCommonElements([1, 2, 3], ['a', 'b', 'c']));
 /**
  * Finds the length of the longest increasing and uninterrupted subsequence of a given array of integers.
  *
