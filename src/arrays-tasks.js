@@ -455,10 +455,15 @@ console.log(createChunks([10, 20, 30, 40, 50], 1));
  *    generateOdds(2) => [ 1, 3 ]
  *    generateOdds(5) => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  return Array(len)
+    .fill(0)
+    .map((_, i) => i * 2 + 1);
 }
-
+console.log(generateOdds(0));
+console.log(generateOdds(1));
+console.log(generateOdds(2));
+console.log(generateOdds(5));
 /**
  * Returns an element from the multidimensional array by the specified indices.
  *
