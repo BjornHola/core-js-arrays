@@ -1,5 +1,5 @@
-eslint-disable "no-console"
-eslint-disable "no-console"
+/* eslint-disable no-console */
+/* eslint-disable no-console */
 /* ********************************************************************************************
  *                                                                                            *
  * Please read the following tutorial before implementing tasks:                               *

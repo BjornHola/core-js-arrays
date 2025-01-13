@@ -22,6 +22,14 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['src/arrays-tasks.js'],
+      rules: {
+        'no-console': 'off',
+      },
+    },
+  ],
   plugins: ['prettier'],
-  noInlineConfig: true,
+  noInlineConfig: false,
 };
