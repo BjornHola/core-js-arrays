@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable no-console */
 /* ********************************************************************************************
  *                                                                                            *
  * Please read the following tutorial before implementing tasks:                               *
@@ -25,10 +23,10 @@
 function getIntervalArray(start, end) {
   return Array.from({ length: end - start + 1 }).map((_, i) => start + i);
 }
-console.log(getIntervalArray(1, 5));
-console.log(getIntervalArray(-2, 2));
-console.log(getIntervalArray(0, 100));
-console.log(getIntervalArray(3, 3));
+getIntervalArray(1, 5);
+getIntervalArray(-2, 2);
+getIntervalArray(0, 100);
+getIntervalArray(3, 3);
 /**
  * Returns a new array where each element is the sum of the corresponding elements
  * from two arrays. Arrays can have different lengths.
@@ -49,9 +47,9 @@ function sumArrays(arr1, arr2) {
     (_, i) => (arr1[i] || 0) + (arr2[i] || 0)
   );
 }
-console.log(sumArrays([1, 2, 3], [4, 5, 6])); // [5, 7, 9]
-console.log(sumArrays([10, 20, 30], [5, 10, 15])); // [15, 30, 45]
-console.log(sumArrays([-1, 0, 1], [1, 2, 3, 4])); // [0, 2, 4, 4]
+sumArrays([1, 2, 3], [4, 5, 6]); // [5, 7, 9]
+sumArrays([10, 20, 30], [5, 10, 15]); // [15, 30, 45]
+sumArrays([-1, 0, 1], [1, 2, 3, 4]); // [0, 2, 4, 4]
 /**
  * Returns an index of the specified element in array or -1 if element is not found.
  *
@@ -70,9 +68,9 @@ function findElement(arr, value) {
   }
   return arr.indexOf(value);
 }
-console.log(findElement(['Ace', 10, true], 10));
-console.log(findElement(['Array', 'Number', 'string'], 'Date'));
-console.log(findElement([0, 1, 2, 3, 4, 5], 5));
+findElement(['Ace', 10, true], 10);
+findElement(['Array', 'Number', 'string'], 'Date');
+findElement([0, 1, 2, 3, 4, 5], 5);
 /**
  * Returns a number of all occurrences of the specified item in an array.
  *
@@ -91,11 +89,11 @@ function findAllOccurrences(arr, item) {
   const result = arr.filter((el) => el === item);
   return result.length;
 }
-console.log(findAllOccurrences([0, 0, 1, 1, 1, 2], 1));
-console.log(findAllOccurrences([1, 2, 3, 4, 5], 0));
-console.log(findAllOccurrences(['a', 'b', 'c', 'c'], 'c'));
-console.log(findAllOccurrences([null, undefined, null], null));
-console.log(findAllOccurrences([true, 0, 1, 'true'], true));
+findAllOccurrences([0, 0, 1, 1, 1, 2], 1);
+findAllOccurrences([1, 2, 3, 4, 5], 0);
+findAllOccurrences(['a', 'b', 'c', 'c'], 'c');
+findAllOccurrences([null, undefined, null], null);
+findAllOccurrences([true, 0, 1, 'true'], true);
 /**
  * Removes falsy values from the specified array.
  * Falsy values: false, null, 0, "", undefined, and NaN.
@@ -120,9 +118,9 @@ function removeFalsyValues(arr) {
   );
   return newArr;
 }
-console.log(removeFalsyValues([0, false, 'cat', NaN, true, '']));
-console.log(removeFalsyValues([1, 2, 3, 4, 5, 'false']));
-console.log(removeFalsyValues([false, 0, NaN, '', undefined]));
+removeFalsyValues([0, false, 'cat', NaN, true, '']);
+removeFalsyValues([1, 2, 3, 4, 5, 'false']);
+removeFalsyValues([false, 0, NaN, '', undefined]);
 
 /**
  * Returns an array containing the lengths of each string in a specified array of strings.
@@ -138,8 +136,8 @@ function getStringsLength(arr) {
   const newArr = arr.map((item) => item.length);
   return newArr;
 }
-console.log(getStringsLength(['', 'a', 'bc', 'def', 'ghij']));
-console.log(getStringsLength(['angular', 'react', 'ember']));
+getStringsLength(['', 'a', 'bc', 'def', 'ghij']);
+getStringsLength(['angular', 'react', 'ember']);
 /**
  * Returns the average of all items in the specified array of numbers.
  * The result should be rounded to two decimal places.
@@ -163,11 +161,11 @@ function getAverage(arr) {
   const average = newArr / arr.length;
   return parseFloat(average.toFixed(2));
 }
-console.log(getAverage([]));
-console.log(getAverage([1, 2, 3]));
-console.log(getAverage([-1, 1, -1, 1]));
-console.log(getAverage([1, 10, 100, 1000]));
-console.log(getAverage([2, 3, 3]));
+getAverage([]);
+getAverage([1, 2, 3]);
+getAverage([-1, 1, -1, 1]);
+getAverage([1, 10, 100, 1000]);
+getAverage([2, 3, 3]);
 /**
  * Checks if all strings in an array have the same length.
  *
@@ -183,8 +181,8 @@ function isSameLength(arr) {
   const { length } = arr[0];
   return arr.every(({ length: len }) => len === length);
 }
-console.log(isSameLength(['orange', 'banana', 'cherry']));
-console.log(isSameLength(['cat', 'dog', 'elephant']));
+isSameLength(['orange', 'banana', 'cherry']);
+isSameLength(['cat', 'dog', 'elephant']);
 /**
  * Checks if there are elements in the array where the value is equal to its index.
  *
@@ -200,9 +198,9 @@ function isValueEqualsIndex(arr) {
   const result = arr.some((value, index) => value === index);
   return result;
 }
-console.log(isValueEqualsIndex([0, 1, 2, 3, 4]));
-console.log(isValueEqualsIndex([2, 1, 0, 4, 5]));
-console.log(isValueEqualsIndex([10, 20, 30, 40, 50]));
+isValueEqualsIndex([0, 1, 2, 3, 4]);
+isValueEqualsIndex([2, 1, 0, 4, 5]);
+isValueEqualsIndex([10, 20, 30, 40, 50]);
 /**
  * Inserts the item into specified array at specified index.
  *
@@ -218,8 +216,8 @@ function insertItem(arr, item, index) {
   arr.splice(index, 0, item);
   return arr;
 }
-console.log(insertItem([1, 3, 4, 5], 2, 1));
-console.log(insertItem([1, 'b', 'c'], 'x', 0));
+insertItem([1, 3, 4, 5], 2, 1);
+insertItem([1, 'b', 'c'], 'x', 0);
 /**
  * Returns the n first items of the specified array.
  *
@@ -234,9 +232,9 @@ console.log(insertItem([1, 'b', 'c'], 'x', 0));
 function getHead(arr, n) {
   return arr.slice(0, n);
 }
-console.log(getHead([1, 3, 4, 5], 2));
-console.log(getHead(['a', 'b', 'c', 'd'], 3));
-console.log(getHead(['a', 'b', 'c', 'd'], 0));
+getHead([1, 3, 4, 5], 2);
+getHead(['a', 'b', 'c', 'd'], 3);
+getHead(['a', 'b', 'c', 'd'], 0);
 /**
  * Returns the n last items of the specified array.
  *
@@ -252,9 +250,9 @@ function getTail(arr, n) {
   if (n === 0) return [];
   return arr.slice(-n);
 }
-console.log(getTail([1, 3, 4, 5], 2));
-console.log(getTail(['a', 'b', 'c', 'd'], 3));
-console.log(getTail(['a', 'b', 'c', 'd'], 0));
+getTail([1, 3, 4, 5], 2);
+getTail(['a', 'b', 'c', 'd'], 3);
+getTail(['a', 'b', 'c', 'd'], 0);
 /**
  * Returns the doubled array - elements of the specified array
  * are repeated twice using original order.
@@ -272,9 +270,9 @@ function doubleArray(arr) {
   const repeatedArr = arr;
   return arr.concat(repeatedArr);
 }
-console.log(doubleArray(['Ace', 10, true]));
-console.log(doubleArray([0, 1, 2, 3, 4, 5]));
-console.log(doubleArray([]));
+doubleArray(['Ace', 10, true]);
+doubleArray([0, 1, 2, 3, 4, 5]);
+doubleArray([]);
 /**
  * Concatenates all elements from specified array into single string with ',' delimiter.
  *
@@ -290,9 +288,9 @@ function toStringList(arr) {
   const result = arr.join();
   return result;
 }
-console.log(toStringList([0, false, 'cat', NaN, true, '']));
-console.log(toStringList([1, 2, 3, 4, 5]));
-console.log(toStringList(['rock', 'paper', 'scissors']));
+toStringList([0, false, 'cat', NaN, true, '']);
+toStringList([1, 2, 3, 4, 5]);
+toStringList(['rock', 'paper', 'scissors']);
 /**
  * Returns array containing only unique values from the specified array.
  *
@@ -309,10 +307,10 @@ function distinct(arr) {
   const result = new Set(arr);
   return Array.from(result);
 }
-console.log(distinct([1, 2, 3, 3, 2, 1]));
-console.log(distinct(['a', 'a', 'a', 'a']));
-console.log(distinct([1, 1, 2, 2, 3, 3, 4, 4]));
-console.log(distinct([]));
+distinct([1, 2, 3, 3, 2, 1]);
+distinct(['a', 'a', 'a', 'a']);
+distinct([1, 1, 2, 2, 3, 3, 4, 4]);
+distinct([]);
 /**
  * Creates an n-dimensional array and fills it with zeros.
  *
@@ -336,10 +334,10 @@ function createNDimensionalArray(n, size) {
   }
   return createArray(n);
 }
-console.log(createNDimensionalArray(2, 3));
-console.log(createNDimensionalArray(3, 2));
-console.log(createNDimensionalArray(4, 2));
-console.log(createNDimensionalArray(1, 1));
+createNDimensionalArray(2, 3);
+createNDimensionalArray(3, 2);
+createNDimensionalArray(4, 2);
+createNDimensionalArray(1, 1);
 /**
  * Flattens a nested array into a single-level array.
  *
@@ -355,9 +353,9 @@ function flattenArray(nestedArray) {
   const result = nestedArray.flat(3);
   return result;
 }
-console.log(flattenArray([1, [2, [3, 4], 5], 6]));
-console.log(flattenArray(['a', ['b', ['c', 'd'], 'e'], 'f']));
-console.log(flattenArray([1, 2, 3, 4]));
+flattenArray([1, [2, [3, 4], 5], 6]);
+flattenArray(['a', ['b', ['c', 'd'], 'e'], 'f']);
+flattenArray([1, 2, 3, 4]);
 /**
  * Projects each element of the specified array to a sequence
  * and flattens the resulting sequences into one array.
@@ -374,17 +372,15 @@ console.log(flattenArray([1, 2, 3, 4]));
 function selectMany(arr, childrenSelector) {
   return arr.flatMap(childrenSelector);
 }
-console.log(
-  selectMany(
-    [
-      [1, 2],
-      [3, 4],
-      [5, 6],
-    ],
-    (x) => x
-  )
+selectMany(
+  [
+    [1, 2],
+    [3, 4],
+    [5, 6],
+  ],
+  (x) => x
 );
-console.log(selectMany(['one', 'two', 'three'], (x) => x.split('')));
+selectMany(['one', 'two', 'three'], (x) => x.split(''));
 /**
  * Every month, you record your income and expenses.
  * Expenses may be greater than income.
@@ -406,19 +402,15 @@ function calculateBalance(arr) {
   }, 0);
   return result;
 }
-console.log(
-  calculateBalance([
-    [10, 8],
-    [5, 1],
-  ])
-);
-console.log(
-  calculateBalance([
-    [10, 8],
-    [1, 5],
-  ])
-);
-console.log(calculateBalance([]));
+calculateBalance([
+  [10, 8],
+  [5, 1],
+]);
+calculateBalance([
+  [10, 8],
+  [1, 5],
+]);
+calculateBalance([]);
 /**
  * Breaks an array into chunks of the specified size.
  *
@@ -442,9 +434,9 @@ function createChunks(arr, chunkSize) {
     return newResult;
   }, []);
 }
-console.log(createChunks([1, 2, 3, 4, 5, 6, 7], 3));
-console.log(createChunks(['a', 'b', 'c', 'd', 'e'], 2));
-console.log(createChunks([10, 20, 30, 40, 50], 1));
+createChunks([1, 2, 3, 4, 5, 6, 7], 3);
+createChunks(['a', 'b', 'c', 'd', 'e'], 2);
+createChunks([10, 20, 30, 40, 50], 1);
 /**
  * Generates an array of odd numbers of the specified length.
  *
@@ -462,10 +454,10 @@ function generateOdds(len) {
     .fill(0)
     .map((_, i) => i * 2 + 1);
 }
-console.log(generateOdds(0));
-console.log(generateOdds(1));
-console.log(generateOdds(2));
-console.log(generateOdds(5));
+generateOdds(0);
+generateOdds(1);
+generateOdds(2);
+generateOdds(5);
 /**
  * Returns an element from the multidimensional array by the specified indices.
  *
@@ -481,18 +473,16 @@ console.log(generateOdds(5));
 function getElementByIndices(arr, indices) {
   return indices.reduce((acc, index) => acc[index], arr);
 }
-console.log(
-  getElementByIndices(
-    [
-      [1, 2],
-      [3, 4],
-      [5, 6],
-    ],
-    [0, 0]
-  )
+getElementByIndices(
+  [
+    [1, 2],
+    [3, 4],
+    [5, 6],
+  ],
+  [0, 0]
 );
-console.log(getElementByIndices(['one', 'two', 'three'], [2]));
-console.log(getElementByIndices([[[1, 2, 3]]], [0, 0, 1]));
+getElementByIndices(['one', 'two', 'three'], [2]);
+getElementByIndices([[[1, 2, 3]]], [0, 0, 1]);
 /**
  * Returns the number of all falsy values in the specified array.
  *
@@ -520,10 +510,10 @@ function getFalsyValuesCount(arr) {
     return acc;
   }, []).length;
 }
-console.log(getFalsyValuesCount([]));
-console.log(getFalsyValuesCount([1, '', 3]));
-console.log(getFalsyValuesCount([-1, 'false', null, 0]));
-console.log(getFalsyValuesCount([null, undefined, NaN, false, 0, '']));
+getFalsyValuesCount([]);
+getFalsyValuesCount([1, '', 3]);
+getFalsyValuesCount([-1, 'false', null, 0]);
+getFalsyValuesCount([null, undefined, NaN, false, 0, '']);
 /**
  * Creates an identity matrix of the specified size.
  *
@@ -547,9 +537,9 @@ function getIdentityMatrix(n) {
     Array.from({ length: n }, (__, j) => (i === j ? 1 : 0))
   );
 }
-console.log(getIdentityMatrix(1));
-console.log(getIdentityMatrix(2));
-console.log(getIdentityMatrix(5));
+getIdentityMatrix(1);
+getIdentityMatrix(2);
+getIdentityMatrix(5);
 /**
  * Returns an array containing indices of odd elements in the input array.
  *
@@ -566,9 +556,9 @@ function getIndicesOfOddNumbers(numbers) {
     .map((number, index) => (number % 2 !== 0 ? index : -1))
     .filter((index) => index !== -1);
 }
-console.log(getIndicesOfOddNumbers([1, 2, 3, 4, 5]));
-console.log(getIndicesOfOddNumbers([2, 4, 6, 8, 10]));
-console.log(getIndicesOfOddNumbers([11, 22, 33, 44, 55]));
+getIndicesOfOddNumbers([1, 2, 3, 4, 5]);
+getIndicesOfOddNumbers([2, 4, 6, 8, 10]);
+getIndicesOfOddNumbers([11, 22, 33, 44, 55]);
 /**
  * Returns the array of RGB Hex strings from the specified array of numbers.
  *
@@ -585,8 +575,8 @@ function getHexRGBValues(arr) {
     return `#${hex}`;
   });
 }
-console.log(getHexRGBValues([0, 255, 16777215]));
-console.log(getHexRGBValues([]));
+getHexRGBValues([0, 255, 16777215]);
+getHexRGBValues([]);
 /**
  * Returns the n largest values from the specified array
  *
@@ -604,11 +594,11 @@ console.log(getHexRGBValues([]));
 function getMaxItems(arr, n) {
   return arr.sort((a, b) => b - a).slice(0, n);
 }
-console.log(getMaxItems([], 5));
-console.log(getMaxItems([1, 2], 1));
-console.log(getMaxItems([2, 3, 1], 2));
-console.log(getMaxItems([10, 2, 7, 5, 3, -5], 3));
-console.log(getMaxItems([10, 10, 10, 10], 3));
+getMaxItems([], 5);
+getMaxItems([1, 2], 1);
+getMaxItems([2, 3, 1], 2);
+getMaxItems([10, 2, 7, 5, 3, -5], 3);
+getMaxItems([10, 10, 10, 10], 3);
 /**
  * Finds and returns an array containing only the common elements found in two arrays.
  *
@@ -624,9 +614,9 @@ console.log(getMaxItems([10, 10, 10, 10], 3));
 function findCommonElements(arr1, arr2) {
   return arr1.filter((item) => arr2.includes(item));
 }
-console.log(findCommonElements([1, 2, 3], [2, 3, 4]));
-console.log(findCommonElements(['a', 'b', 'c'], ['b', 'c', 'd']));
-console.log(findCommonElements([1, 2, 3], ['a', 'b', 'c']));
+findCommonElements([1, 2, 3], [2, 3, 4]);
+findCommonElements(['a', 'b', 'c'], ['b', 'c', 'd']);
+findCommonElements([1, 2, 3], ['a', 'b', 'c']);
 /**
  * Finds the length of the longest increasing and uninterrupted subsequence of a given array of integers.
  *
@@ -655,11 +645,9 @@ function findLongestIncreasingSubsequence(nums) {
   comparer(1);
   return maxLength;
 }
-console.log(
-  findLongestIncreasingSubsequence([10, 22, 9, 33, 21, 50, 41, 60, 80])
-);
-console.log(findLongestIncreasingSubsequence([3, 10, 2, 1, 20]));
-console.log(findLongestIncreasingSubsequence([50, 3, 10, 7, 40, 80]));
+findLongestIncreasingSubsequence([10, 22, 9, 33, 21, 50, 41, 60, 80]);
+findLongestIncreasingSubsequence([3, 10, 2, 1, 20]);
+findLongestIncreasingSubsequence([50, 3, 10, 7, 40, 80]);
 /**
  * Propagates every item in sequence its position times
  * Returns an array that consists of: one first item, two second items, three third items etc.
@@ -678,11 +666,11 @@ function propagateItemsByPositionIndex(arr) {
   if (arr.length === 0) return [];
   return arr.flatMap((item, index) => Array(index + 1).fill(item));
 }
-console.log(propagateItemsByPositionIndex([]));
-console.log(propagateItemsByPositionIndex([1]));
-console.log(propagateItemsByPositionIndex(['a', 'b']));
-console.log(propagateItemsByPositionIndex(['a', 'b', 'c', null]));
-console.log(propagateItemsByPositionIndex([1, 2, 3, 4, 5]));
+propagateItemsByPositionIndex([]);
+propagateItemsByPositionIndex([1]);
+propagateItemsByPositionIndex(['a', 'b']);
+propagateItemsByPositionIndex(['a', 'b', 'c', null]);
+propagateItemsByPositionIndex([1, 2, 3, 4, 5]);
 /**
  * Shifts an array by n positions. If n is negative, the array is shifted to the left;
  * if positive, it is shifted to the right.
@@ -701,9 +689,9 @@ function shiftArray(arr, n) {
   const t = ((n % len) + len) % len;
   return arr.slice(-t).concat(arr.slice(0, -t));
 }
-console.log(shiftArray([1, 2, 3, 4, 5], 2));
-console.log(shiftArray(['a', 'b', 'c', 'd'], -1));
-console.log(shiftArray([10, 20, 30, 40, 50], -3));
+shiftArray([1, 2, 3, 4, 5], 2);
+shiftArray(['a', 'b', 'c', 'd'], -1);
+shiftArray([10, 20, 30, 40, 50], -3);
 /**
  * Sorts digit names.
  *
@@ -732,11 +720,11 @@ function sortDigitNamesByNumericOrder(arr) {
   ];
   return arr.sort((a, b) => digitNames.indexOf(a) - digitNames.indexOf(b));
 }
-console.log(sortDigitNamesByNumericOrder([]));
-console.log(sortDigitNamesByNumericOrder(['nine', 'one']));
-console.log(sortDigitNamesByNumericOrder(['one', 'two', 'three']));
-console.log(sortDigitNamesByNumericOrder(['nine', 'eight', 'nine', 'eight']));
-console.log(sortDigitNamesByNumericOrder(['one', 'one', 'one', 'zero']));
+sortDigitNamesByNumericOrder([]);
+sortDigitNamesByNumericOrder(['nine', 'one']);
+sortDigitNamesByNumericOrder(['one', 'two', 'three']);
+sortDigitNamesByNumericOrder(['nine', 'eight', 'nine', 'eight']);
+sortDigitNamesByNumericOrder(['one', 'one', 'one', 'zero']);
 /**
  * Swaps the head and tail of the specified array:
  * the head (first half) of array move to the end, the tail (last half) move to the start.
@@ -766,10 +754,10 @@ function swapHeadAndTail(arr) {
   const result = half2.concat(middleElement, half1);
   return result;
 }
-console.log(swapHeadAndTail([1, 2]));
-console.log(swapHeadAndTail([1, 2, 3, 4, 5, 6, 7, 8]));
-console.log(swapHeadAndTail([1]));
-console.log(swapHeadAndTail([]));
+swapHeadAndTail([1, 2]);
+swapHeadAndTail([1, 2, 3, 4, 5, 6, 7, 8]);
+swapHeadAndTail([1]);
+swapHeadAndTail([]);
 
 module.exports = {
   getIntervalArray,
