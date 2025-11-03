@@ -20,10 +20,14 @@
  *    getIntervalArray(0, 100) => [ 0, 1, 2, ..., 100 ]
  *    getIntervalArray(3, 3) => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  const arr = Array.from(
+    { length: end - start + 1 },
+    (_, index) => start + index
+  );
+  return arr;
 }
-
+getIntervalArray(1, 5);
 /**
  * Returns a new array where each element is the sum of the corresponding elements
  * from two arrays. Arrays can have different lengths.
@@ -37,10 +41,24 @@ function getIntervalArray(/* start, end */) {
  *    sumArrays([10, 20, 30], [5, 10, 15]) => [15, 30, 45]
  *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
  */
-function sumArrays(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function sumArrays(arr1, arr2) {
+  let arr = [];
+  if (arr1.length === arr2.length) {
+    arr = arr1.map((element, index) => element + arr2[index]);
+    return arr;
+  }
+  if (arr1.length < arr2.length) {
+    arr = arr2.map((element, index) =>
+      arr1[index] ? element + arr1[index] : element
+    );
+    return arr;
+  }
+  arr = arr1.map((element, index) =>
+    arr2[index] ? element + arr2[index] : element
+  );
+  return arr;
 }
-
+sumArrays([1, 2, 3], [4, 5, 6]);
 /**
  * Returns an index of the specified element in array or -1 if element is not found.
  *
@@ -53,9 +71,10 @@ function sumArrays(/* arr1, arr2 */) {
  *    findElement(['Array', 'Number', 'string'], 'Date') => -1
  *    findElement([0, 1, 2, 3, 4, 5], 5) => 5
  */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
+function findElement(arr, value) {
+  return arr.indexOf(value);
 }
+findElement(['Ace', 10, true], 10);
 
 /**
  * Returns a number of all occurrences of the specified item in an array.
